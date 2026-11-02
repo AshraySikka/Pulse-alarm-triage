@@ -1,0 +1,132 @@
+/*
+  Pulse design tokens.
+
+  The palette follows high-performance HMI practice (ISA-101): the interface is
+  grey when things are normal, and colour is reserved for priority. Priority is
+  never colour alone; every tier also has a shape and a word.
+  Violet is used only for Claude's second opinion.
+*/
+
+:root {
+  --font-sans: "Atkinson Hyperlegible Next Variable", "Atkinson Hyperlegible Next", system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-num: "Atkinson Hyperlegible Mono Variable", "Atkinson Hyperlegible Mono", ui-monospace, "SF Mono", Menlo,
+    Consolas, monospace;
+
+  /* Neutrals */
+  --canvas: #e1e4e7;
+  --panel: #f2f3f5;
+  --raised: #ffffff;
+  --sunken: #d7dbdf;
+  --ink: #1d2227;
+  --ink-2: #48515a;
+  --ink-3: #737c86;
+  --ink-4: #9aa2ab;
+  --rule: #c9ced4;
+  --rule-soft: #dadee2;
+  --track: #d3d8dd;
+  --band: #b4bcc4;
+  --focus: #1f5bd6;
+  --scrim: rgba(29, 34, 39, 0.38);
+
+  /* Priority. Fills validated for CVD and normal-vision separation (dataviz checks);
+     the darker edge keeps orange and yellow marks legible on the grey canvas. */
+  --crit: #b10e28;
+  --crit-fill: #c8102e;
+  --crit-edge: #9e0c24;
+  --crit-wash: rgba(200, 16, 46, 0.055);
+  --high: #a84c06;
+  --high-fill: #e0670f;
+  --high-edge: #b0500a;
+  --high-wash: rgba(224, 103, 15, 0.09);
+  --med: #7d6500;
+  --med-fill: #e3c200;
+  --med-edge: #a08700;
+  --med-wash: rgba(227, 194, 0, 0.1);
+  --low: #8b949d;
+  --low-fill: #a7afb7;
+  --low-edge: #8b949d;
+
+  /* Claude */
+  --claude: #5a46c8;
+  --claude-fill: #5a46c8;
+  --claude-on: #ffffff;
+  --claude-wash: rgba(90, 70, 200, 0.07);
+  --claude-rule: rgba(90, 70, 200, 0.35);
+
+  /* Type scale (Bringhurst-style, 15px base, ~1.25 ratio) */
+  --t-xs: 12px;
+  --t-sm: 13px;
+  --t-base: 15px;
+  --t-md: 17px;
+  --t-lg: 21px;
+  --t-xl: 27px;
+  --t-2xl: 34px;
+  --t-hero: clamp(30px, 3.6vw, 46px);
+
+  /* Space (4 pt grid) */
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s5: 20px;
+  --s6: 24px;
+  --s8: 32px;
+  --s10: 40px;
+  --s12: 48px;
+
+  /* Radii carry hierarchy: data marks are crisp, controls soft, panels softer */
+  --r-mark: 2px;
+  --r-ctl: 7px;
+  --r-panel: 12px;
+
+  --shadow-drawer: -1px 0 0 var(--rule), -28px 0 56px rgba(20, 24, 28, 0.16);
+  --shadow-pop: 0 1px 0 var(--rule), 0 12px 32px rgba(20, 24, 28, 0.16);
+
+  --sidebar-w: 232px;
+  --drawer-w: min(640px, 100vw);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  --canvas: #1b1f23;
+  --panel: #23282d;
+  --raised: #2b3137;
+  --sunken: #171a1d;
+  --ink: #e8ebee;
+  --ink-2: #b3bbc3;
+  --ink-3: #87909a;
+  --ink-4: #646d77;
+  --rule: #3a4148;
+  --rule-soft: #30363c;
+  --track: #353c43;
+  --band: #4f5861;
+  --focus: #7aa7ff;
+  --scrim: rgba(0, 0, 0, 0.5);
+
+  --crit: #ff6b82;
+  --crit-fill: #ff4a68;
+  --crit-edge: #ff4a68;
+  --crit-wash: rgba(255, 74, 104, 0.11);
+  --high: #f6a24a;
+  --high-fill: #f39129;
+  --high-edge: #f39129;
+  --high-wash: rgba(243, 145, 41, 0.1);
+  --med: #eedb52;
+  --med-fill: #eedb52;
+  --med-edge: #eedb52;
+  --med-wash: rgba(238, 219, 82, 0.08);
+  --low: #7f8891;
+  --low-fill: #66707a;
+  --low-edge: #7f8891;
+
+  --claude: #a395ff;
+  --claude-fill: #7b68ee;
+  --claude-on: #ffffff;
+  --claude-wash: rgba(163, 149, 255, 0.09);
+  --claude-rule: rgba(163, 149, 255, 0.4);
+
+  --shadow-drawer: -1px 0 0 var(--rule), -28px 0 56px rgba(0, 0, 0, 0.45);
+  --shadow-pop: 0 1px 0 var(--rule), 0 12px 32px rgba(0, 0, 0, 0.45);
+  color-scheme: dark;
+}

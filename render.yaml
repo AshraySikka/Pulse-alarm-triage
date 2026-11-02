@@ -1,0 +1,28 @@
+# Render Blueprint: the Pulse API. The database lives on Neon and the front end on Vercel.
+# Secrets marked sync: false are asked for in the Render dashboard, never stored in git.
+services:
+  - type: web
+    name: pulse-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: bash build.sh
+    startCommand: gunicorn pulse.wsgi:application --workers 1 --threads 4 --timeout 120 --bind 0.0.0.0:$PORT
+    healthCheckPath: /healthz/
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.5
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false
+      - key: PULSE_CORS_ORIGINS
+        sync: false
+      - key: ANTHROPIC_API_KEY
+        sync: false
+      - key: PULSE_CLAUDE_HOURLY_LIMIT
+        value: "40"
+      - key: PULSE_AUTO_RESEED_HOURS
+        value: "3"

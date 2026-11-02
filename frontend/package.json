@@ -1,0 +1,28 @@
+{
+  "name": "pulse-frontend",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Pulse: alarm triage for care teams. React front end.",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@fontsource-variable/atkinson-hyperlegible-mono": "^5.3.0",
+    "@fontsource-variable/atkinson-hyperlegible-next": "^5.3.0",
+    "katex": "^0.19.1",
+    "lucide-react": "^0.540.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "recharts": "^3.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.7.0",
+    "vite": "^6.4.0"
+  },
+  "engines": {
+    "node": ">=18.18"
+  }
+}
